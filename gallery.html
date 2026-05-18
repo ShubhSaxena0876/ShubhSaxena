@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Sonic Wave | ProSound Elite X1</title>
+  <meta name="description" content="View the ProSound Elite X1 in stunning detail. Product gallery and visual showcase by Sonic Wave Audio." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23080808'/><text x='50%25' y='60%25' font-size='20' text-anchor='middle' fill='%23c8a96e' font-family='serif' font-weight='bold'>S</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Gallery page extras */
+    .gallery-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: var(--dark);
+      color: var(--mid);
+      font-family: var(--font-cond);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      gap: 0.75rem;
+      transition: color var(--transition-fast);
+    }
+    .gallery-placeholder svg { width: 32px; height: 32px; opacity: 0.4; }
+    .gallery-item:hover .gallery-placeholder { color: var(--silver); }
+
+    .gallery-uses-poster img { filter: none; }
+
+    /* Slider */
+    .slider-section {
+      padding: 6rem 0 8rem;
+      background: var(--deep);
+      border-top: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .slider-track-wrap {
+      position: relative;
+      margin-top: 3rem;
+      overflow: hidden;
+    }
+    .slider-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .slider-slide {
+      flex: 0 0 33.333%;
+      padding: 0 0.75rem;
+    }
+    .slider-slide img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      filter: brightness(0.8);
+      transition: filter var(--transition);
+    }
+    .slider-slide img:hover { filter: brightness(1); }
+    .slider-slide-ph {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-cond);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+    .slider-controls {
+      display: flex; align-items: center; gap: 1rem;
+      margin-top: 2rem; justify-content: center;
+    }
+    .slider-btn {
+      width: 46px; height: 46px;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--silver);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .slider-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .slider-btn svg { width: 18px; height: 18px; }
+    .slider-dots { display: flex; gap: 0.5rem; }
+    .slider-dot {
+      width: 6px; height: 6px;
+      background: var(--border);
+      border-radius: 50%;
+      transition: background var(--transition-fast), transform var(--transition-fast);
+      cursor: pointer;
+    }
+    .slider-dot.active { background: var(--gold); transform: scale(1.3); }
+
+    @media (max-width: 768px) {
+      .slider-slide { flex: 0 0 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="loader">
+  <div class="loader-logo">SONIC WAVE</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  <p class="loader-sub">Gallery</p>
+</div>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">SONIC<span>WAVE</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta">Shop Now</a>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<nav class="nav-mobile">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="features.html">Features</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="container">
+    <div class="page-hero-label">Visual Showcase</div>
+    <h1 class="page-hero-title reveal">
+      THE<br><span>GALLERY</span>
+    </h1>
+  </div>
+</section>
+
+<!-- GALLERY GRID -->
+<section class="gallery-section">
+  <div class="container-wide">
+    <div style="text-align:center; margin-bottom:1rem;">
+      <div class="section-label">ProSound Elite X1</div>
+      <h2 class="section-title reveal">Every Angle,<br>Every Detail</h2>
+      <p class="section-sub reveal" style="margin:1rem auto 0; max-width:520px;">Click any image to view full-screen. Use arrow keys or buttons to navigate.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <!-- Item 1: poster image, spans 2 cols -->
+      <div class="gallery-item span2 gallery-uses-poster">
+        <img src="assets/poster.jpg" alt="ProSound Elite X1 Official Poster" />
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item-label">Official Product Poster</div>
+      </div>
+
+      <!-- Item 2: poster again, tall -->
+      <div class="gallery-item span2h gallery-uses-poster">
+        <img src="assets/poster.jpg" alt="ProSound Elite X1 Detail Shot" style="object-position: center 30%;" />
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="gallery-item-label">Driver Detail</div>
+      </div>
+
+      <!-- Placeholder items -->
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          Side Profile View
+        </div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+        <div class="gallery-item-label">Side Profile</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          Headband Close-Up
+        </div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+        <div class="gallery-item-label">Headband Detail</div>
+      </div>
+
+      <!-- Poster cropped to ear cup area -->
+      <div class="gallery-item gallery-uses-poster">
+        <img src="assets/poster.jpg" alt="Ear Cushion Detail" style="object-position: 60% 70%; transform: scale(1.4);" />
+        <div class="gallery-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+        <div class="gallery-item-label">Ear Cushion</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          Folded View
+        </div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+        <div class="gallery-item-label">Folded Compact</div>
+      </div>
+
+      <!-- Another poster view -->
+      <div class="gallery-item span2 gallery-uses-poster">
+        <img src="assets/poster.jpg" alt="Sonic Wave Brand Poster" style="object-position: center 10%;" />
+        <div class="gallery-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+        <div class="gallery-item-label">Brand Campaign</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          USB-C Port
+        </div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+        <div class="gallery-item-label">Charging Port</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          In Carry Case
+        </div>
+        <div class="gallery-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+        <div class="gallery-item-label">Travel Case</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SLIDER SECTION -->
+<section class="slider-section">
+  <div class="container">
+    <div class="section-label">Lifestyle Collection</div>
+    <h2 class="section-title reveal">Elite X1 in<br>The Wild</h2>
+  </div>
+  <div class="slider-track-wrap" style="max-width:1200px; margin:3rem auto 0; padding:0 2rem;">
+    <div class="slider-track" id="slider-track">
+      <div class="slider-slide">
+        <img src="assets/poster.jpg" alt="ProSound Elite X1 Lifestyle Shot 1" />
+      </div>
+      <div class="slider-slide">
+        <div class="slider-slide-ph">Studio Session</div>
+      </div>
+      <div class="slider-slide">
+        <div class="slider-slide-ph">Commute Mode</div>
+      </div>
+      <div class="slider-slide">
+        <img src="assets/poster.jpg" alt="ProSound Elite X1 Lifestyle Shot 2" style="object-position: center 20%;" />
+      </div>
+      <div class="slider-slide">
+        <div class="slider-slide-ph">Work From Home</div>
+      </div>
+      <div class="slider-slide">
+        <div class="slider-slide-ph">Travel Edition</div>
+      </div>
+    </div>
+    <div class="slider-controls">
+      <button class="slider-btn" id="slider-prev" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="slider-dots" id="slider-dots"></div>
+      <button class="slider-btn" id="slider-next" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY MODAL -->
+<div class="modal-overlay" id="gallery-modal">
+  <div class="modal-inner">
+    <button class="modal-close" id="modal-close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      Close
+    </button>
+    <img id="modal-img" src="" alt="" class="modal-img" />
+    <div class="modal-nav">
+      <button class="modal-nav-btn" id="modal-prev">← Previous</button>
+      <button class="modal-nav-btn" id="modal-next">Next →</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">SONIC<span>WAVE</span></div>
+        <p class="footer-desc">Crafting premium wireless audio experiences since 2018.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="footer-social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+        </div>
+      </div>
+      <div><div class="footer-col-title">Pages</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="features.html">Features</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><div class="footer-col-title">Product</div><ul class="footer-links"><li><a href="features.html">Specifications</a></li><li><a href="features.html">Sound Quality</a></li><li><a href="features.html">Battery Life</a></li></ul></div>
+      <div><div class="footer-col-title">Support</div><ul class="footer-links"><li><a href="contact.html">Contact Us</a></li><li><a href="contact.html">FAQ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Sonic Wave Audio. All rights reserved.</p>
+      <p class="footer-contact"><strong>@sonicwaveaudio</strong> &nbsp;|&nbsp; +91 9620308845</p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script src="js/script.js"></script>
+<script>
+  // Slider logic (gallery-specific)
+  (function() {
+    const track  = document.getElementById('slider-track');
+    const dotsWrap = document.getElementById('slider-dots');
+    if (!track) return;
+
+    const slides = track.children;
+    const total  = Math.ceil(slides.length / (window.innerWidth <= 768 ? 1 : 3));
+    let current  = 0;
+
+    // Create dots
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    }
+
+    const goTo = (idx) => {
+      current = (idx + total) % total;
+      const perView = window.innerWidth <= 768 ? 1 : 3;
+      const offset  = current * perView * (100 / slides.length);
+      track.style.transform = `translateX(-${offset}%)`;
+      dotsWrap.querySelectorAll('.slider-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+    };
+
+    document.getElementById('slider-prev')?.addEventListener('click', () => goTo(current - 1));
+    document.getElementById('slider-next')?.addEventListener('click', () => goTo(current + 1));
+
+    // Auto-play
+    setInterval(() => goTo(current + 1), 4000);
+  })();
+</script>
+</body>
+</html>
